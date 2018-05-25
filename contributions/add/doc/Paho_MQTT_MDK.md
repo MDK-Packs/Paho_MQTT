@@ -12,8 +12,8 @@ When you have chosen your device and development board, use ![Pack Installer](./
 * **MDK-Packs::Paho_MQTT**
 * **MDK-Packs::IoT_Socket** v1.0.0 or newer
 * **ARM::CMSIS** v5.0.1 or newer
-* **ARM::mbedTLS** v1.3.1 or newer
-* **Keil::MDK-Middleware** v7.4.0 or newer
+* **ARM::mbedTLS** v1.5.0 or newer
+* **Keil::MDK-Middleware** v7.7.0 or newer
 * Device family pack for the selected device
 
 **Note**:
