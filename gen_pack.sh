@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Version: 1.0 
-# Date: 2018-05-22
+# Date: 2018-05-25
 # This bash script generates a CMSIS Software Pack:
 #
 # Requirements:
@@ -64,7 +64,7 @@ if [ ! -d $PACK_BUILD ]; then
   popd
 fi
 
-# Merge contributions into $PACKBUILD
+# Merge contributions into $PACK_BUILD
 # add (must not overwrite)
 cp -vr $CONTRIB_ADD/* $PACK_BUILD/
 
@@ -86,14 +86,14 @@ popd
 cp -f  $PACK_BUILD/edl-v10 $PACK_BUILD/edl-v10.txt 
 
 # Remove some unnecessary files
-# rm -f  $PACK_BUILD/.cproject
-# rm -f  $PACK_BUILD/.gitignore
-# rm -f  $PACK_BUILD/.project
-# rm -f  $PACK_BUILD/.travis.yml
-# rm -f  $PACK_BUILD/travis-*
-# rm -f  $PACK_BUILD/library.properties
-# rm -rf $PACK_BUILD/.settings
-# rm -rf $PACK_BUILD/Debug
+rm -f  $PACK_BUILD/.cproject
+rm -f  $PACK_BUILD/.gitignore
+rm -f  $PACK_BUILD/.project
+rm -f  $PACK_BUILD/.travis.yml
+rm -f  $PACK_BUILD/travis-*
+rm -f  $PACK_BUILD/library.properties
+rm -rf $PACK_BUILD/.settings
+rm -rf $PACK_BUILD/Debug
 
 # Run Pack Check and generate PackName file
 $UTILITIES_DIR/$UTILITIES_OS/PackChk.exe $PACK_BUILD/$PACK_VENDOR.$PACK_NAME.pdsc -n PackName.txt
@@ -109,7 +109,9 @@ rm -rf PackName.txt
 
 # Archiving
 # $ZIP a $PACKNAME
-/c/Program\ Files/7-Zip/7z.exe a $PACKNAME -tzip
+pushd $PACK_BUILD
+/c/Program\ Files/7-Zip/7z.exe a ../$PACKNAME -tzip
+popd
 errorlevel=$?
 if [ $errorlevel -ne 0 ]; then
   echo "build aborted: archiving failed"
