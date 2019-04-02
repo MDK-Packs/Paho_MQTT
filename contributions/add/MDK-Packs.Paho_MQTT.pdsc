@@ -7,7 +7,7 @@
   <url>https://github.com/MDK-Packs/Pack/raw/master/Paho_MQTT/</url>
   <license>edl-v10.txt</license>
   <releases>
-    <release version="1.0.1">
+    <release version="1.0.1" date="2019-04-02">
       Updated mbedTLS support (replaced deprecated mbedTLS.h header)
     </release>
     <release version="1.0.0" date="2018-05-28">
