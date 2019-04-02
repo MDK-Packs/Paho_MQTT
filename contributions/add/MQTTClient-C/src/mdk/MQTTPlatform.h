@@ -21,7 +21,12 @@
 #include "iot_socket.h"
 #include "RTE_Components.h"
 #ifdef    RTE_Security_mbedTLS
-#include "mbedTLS.h"
+#include "mbedtls/entropy.h"
+#include "mbedtls/ctr_drbg.h"
+#include "mbedtls/ssl.h"
+#include "mbedtls/net_sockets.h"
+#include "mbedtls/pk.h"
+#include "mbedtls/x509.h"
 #endif
 
 #ifndef   MQTT_MBEDTLS
