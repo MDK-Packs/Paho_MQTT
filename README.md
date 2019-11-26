@@ -7,8 +7,8 @@ https://github.com/eclipse/paho.mqtt.embedded-c
 This repository provides a bash script to build a CMSIS Software Pack. 
 It fetches a preconfigured version of the upstream repository and 
 adds a set of files contained in the directory named 'contributions' and creates a zip archive. 
-The contributions directory contains the subfolders
--- 'add': containing files for inclusion into the pack that are not (yet) present in the upstream repository
+The contributions directory contains the subfolders  
+-- 'add': containing files for inclusion into the pack that are not (yet) present in the upstream repository  
 -- 'merge': containing files that are present in the public Paho_MQTT GibHub repository but have been modified to
    become fit for use in MDK and Arm DS.
 
