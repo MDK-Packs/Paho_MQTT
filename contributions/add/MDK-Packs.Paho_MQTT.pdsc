@@ -7,6 +7,9 @@
   <url>https://github.com/MDK-Packs/Pack/raw/master/Paho_MQTT/</url>
   <license>edl-v10.txt</license>
   <releases>
+    <release version="1.0.3">
+      Updated MQTTClient-C Platform (corrected Network Initialization)
+    </release>
     <release version="1.0.2" date="2019-04-03">
       Updated mbedTLS support (added missing include for mbedTLS debug)
     </release>
@@ -68,7 +71,7 @@
         <file category="source"  name="MQTTPacket/src/MQTTUnsubscribeServer.c"/>
       </files>
     </component>
-    <component Cclass="IoT Client" Cgroup="MQTTClient-C" Cversion="1.1.0" condition="MQTTClient-C">
+    <component Cclass="IoT Client" Cgroup="MQTTClient-C" Cversion="1.1.1" condition="MQTTClient-C">
       <description>Paho MQTTClient-C</description>
       <RTE_Components_h>
         <!-- the following content goes into file 'RTE_Components.h' -->

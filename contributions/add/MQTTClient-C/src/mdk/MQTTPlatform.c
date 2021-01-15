@@ -258,7 +258,12 @@ int NetworkInit(Network* n)
 {
   n->socket = -1;
 #if (MQTT_MBEDTLS != 0)
+  n->mqttread = network_tls_read;
+  n->mqttwrite = network_tls_write;
   n->tlsdata.server_fd.fd = -1;
+#else
+  n->mqttread = network_read;
+  n->mqttwrite = network_write;
 #endif
   return 0;
 }
@@ -281,9 +286,6 @@ int NetworkConnect(Network* n, char* addr, int port)
   rc = iotSocketConnect(n->socket, &ip[0], ip_len, (unsigned short)port);
   if (rc < 0)
     return (-1);
-
-  n->mqttread = network_read;
-  n->mqttwrite = network_write;
 
   return 0;
 }
@@ -476,9 +478,6 @@ int NetworkConnectTLS(Network* n, char* addr, int port, TLScert *tlscert)
 
   mbedtls_x509_crt_free(&n->tlsdata.clicert);
   mbedtls_x509_crt_free(&n->tlsdata.cacert);
-
-  n->mqttread = network_tls_read;
-  n->mqttwrite = network_tls_write;
 
   return 0;
 }
