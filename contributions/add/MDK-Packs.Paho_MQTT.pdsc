@@ -7,7 +7,7 @@
   <url>https://github.com/MDK-Packs/Pack/raw/master/Paho_MQTT/</url>
   <license>edl-v10.txt</license>
   <releases>
-    <release version="1.0.3">
+    <release version="1.0.3" date="2021-09-16">
       Updated MQTTClient-C Platform (corrected Network Initialization)
       Components made available also for Cortex-M35P and Cortex-M55
     </release>
