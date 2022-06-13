@@ -133,7 +133,7 @@ The MQTT Echo sample code is prepared to output `printf` statements for debuggin
 
 ### Run/debug the application
 MQTT Echo is a simple application which:
- - connects to iot.eclipse.org test server
+ - connects to mqtt.eclipseprojects.io test server
  - subscribes to a topic "MDK/sample/#"
  - publishes messages to previously subscribed topic
  - displays messages received back (echo)
