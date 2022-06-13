@@ -7,7 +7,7 @@
 #include "certificates.h"
 #endif
 
-#define SERVER_NAME "iot.eclipse.org"
+#define SERVER_NAME "mqtt.eclipseprojects.io"
 #if (MQTT_MBEDTLS != 0)
 #define SERVER_PORT 8883
 #else
