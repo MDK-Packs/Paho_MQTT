@@ -360,7 +360,9 @@ int NetworkConnectTLS(Network* n, char* addr, int port, TLScert *tlscert)
                                (const unsigned char *)tlscert->client_key,
                                strlen(tlscert->client_key) + 1,
                                NULL,
-                               0);
+                               0,
+                               mbedtls_ctr_drbg_random,
+                               &n->tlsdata.ctr_drbg);
     if (ret != 0)
     {
       mbedtls_printf(" failed\n  !  mbedtls_pk_parse_key returned -0x%x\n\n", -ret);
