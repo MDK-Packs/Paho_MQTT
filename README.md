@@ -5,6 +5,7 @@ This repo frames the Eclipse Paho MQTT C/C++ client as a CMSIS-Pack  (upstream: 
 Working with this repository requires the following applications and packs to be installed on your PC:
 - bash compatible shell (under Windows, use for example [git bash](https://gitforwindows.org/))
 - ZIP archive creation utility (e.g. [7-Zip](https://www.7-zip.org/))
+- CMSIS Pack installed in CMSIS_PACK_ROOT (for PackChk utility)
 - [Doxygen version 1.8.6](https://sourceforge.net/projects/doxygen/files/rel-1.8.6/)
 
 ## Instructions
